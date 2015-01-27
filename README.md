@@ -1,11 +1,15 @@
 #loopback-example-mysql
 
+Basic instructions:
+
 ```
 git clone https://github.com/strongloop/loopback-example-mysql.git
 cd loopback-example-mysql
 npm install
-# then run any script in `server/bin` (ie. node server/bin/discover-schema.js)
 ```
+
+Then run any script in `server/bin` (for example, `node server/bin/discover-schema.js`).
+
 
 - [Prerequisites](#prerequisites)
 - [Procedure](#procedure)
