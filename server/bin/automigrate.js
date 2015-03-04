@@ -16,7 +16,7 @@ var accounts = [
 var dataSource = app.dataSources.accountDs;
 
 dataSource.automigrate('Account', function(err) {
-  if (err) console.log(err);
+  if (err) throw err;
 
   var Account = app.models.Account;
   var count = accounts.length;
