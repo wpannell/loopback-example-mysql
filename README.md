@@ -21,7 +21,7 @@ Then run any script in `server/bin` (for example, `node server/bin/discover-sche
 
 ##Procedure
 
-###1. Create the application
+###Create the application
 
 ####Application information
 
@@ -34,13 +34,13 @@ slc loopback loopback-example-mysql
 cd loopback-example-mysql
 ```
 
-###2. Install the connector
+###Install the connector
 
 ```
 npm install --save loopback-connector-mysql
 ```
 
-###3. Configure the datasource
+###Configure the datasource
 
 ####Datasource information
 - Datasource: `accountDs`
@@ -56,7 +56,7 @@ Add the [datasource configurations](/server/datasources.json#L9-L13) to
 
 > We provide a demo server for convenience sake, but feel free to use your own database server.
 
-###4. Add a model
+###Add a model
 
 ####Model information
 - Name: `Account`
@@ -80,15 +80,13 @@ slc loopback:model Account
 ... # follow the prompts
 ```
 
-###5. Add a script to migrate data
+###Add a script to migrate data
 
 Create a directory for to store scripts.
 
 ```
 mkdir server/bin
 ```
-
-> `bin` is a directory name commonly used for executable files on unix and unix-like systems.
 
 Create [`automigrate.js`](/server/bin/automigrate.js) inside the
 [`bin`](/server/bin) directory.
@@ -98,7 +96,7 @@ Create [`automigrate.js`](/server/bin/automigrate.js) inside the
 ####Test the script
 
 > #####WARNING
-> [`dataSource.automigrate()`](/server/bin/automigrate.js#L18) creates a new table in the database if it doesn't exist. If the table already exists, it will be **DESTROYED** and **ALL** existing data will be dropped. If you want to keep the existing data, use `datasource.autoupdate()` instead.
+> [`dataSource.automigrate()`](/server/bin/automigrate.js#L18) creates a new table in the database if it doesn't exist. If the table already exists, it is **destroyed** and **all** existing data is dropped. If you want to keep the existing data, use `datasource.autoupdate()` instead.
 
 ```
 node server/bin/automigrate.js
@@ -109,7 +107,7 @@ This script creates [two models](/server/bin/automigrate.js#L5-L14) in the
 
 > You can view the newly inserted data using built-in [API explorer](http://docs.strongloop.com/display/LB/Use+API+Explorer). Start the application with `slc run` and browse to [`localhost:3000/explorer`][explorer] to inspect the data.
 
-###6. Add a script to discover a schema
+###Add a script to discover a schema
 
 > *Discovery* is the process of reverse engineering a LoopBack model from an existing database schema.
 
@@ -200,7 +198,7 @@ You should see:
 }
 ```
 
-###7. Add a script to discover and build models
+###Add a script to discover and build models
 
 Create [`discover-and-build.js`](/server/bin/discover-and-build.js) in the
 [`bin` directory](/server/bin).
@@ -229,13 +227,7 @@ You should see:
 The resulting objects are fully functional
 [LoopBack models](/server/bin/discover-and-build.js#L7) and thus contain all the
 features provided by LoopBack such as
-[`find()`](/server/bin/discover-and-build.js#L10), etc.
-
-###8. Conclusion
-
-You've successfully implemented various MySQL database features provided by
-LoopBack. See the [official documentation](http://docs.strongloop.com/display/LB/Defining+models) and [loopback-connector-mysql](https://github.com/strongloop/loopback-connector-mysql)
-for more information.
+[`find()`](/server/bin/discover-and-build.js#L10), and so on.
 
 ---
 
