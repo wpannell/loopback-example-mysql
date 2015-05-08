@@ -3,9 +3,9 @@
 Basic instructions:
 
 ```
-git clone https://github.com/strongloop/loopback-example-mysql.git
-cd loopback-example-mysql
-npm install
+$ git clone https://github.com/strongloop/loopback-example-mysql.git
+$ cd loopback-example-mysql
+$ npm install
 ```
 
 Then run any script in `server/bin` (for example, `node server/bin/discover-schema.js`).
@@ -29,15 +29,15 @@ Then run any script in `server/bin` (for example, `node server/bin/discover-sche
 - Directory to contain the project: `loopback-example-mysql`
 
 ```
-slc loopback loopback-example-mysql
+$ slc loopback loopback-example-mysql
 ... # follow the prompts
-cd loopback-example-mysql
+$ cd loopback-example-mysql
 ```
 
 ###Install the connector
 
 ```
-npm install --save loopback-connector-mysql
+$ npm install --save loopback-connector-mysql
 ```
 
 ###Configure the datasource
@@ -47,7 +47,7 @@ npm install --save loopback-connector-mysql
 - Connector: `MySQL`
 
 ```
-slc loopback:datasource accountDs
+$ slc loopback:datasource accountDs
 ... # follow the prompts
 ```
 
@@ -76,7 +76,7 @@ Add the [datasource configurations](/server/datasources.json#L9-L13) to
       - Not required
 
 ```
-slc loopback:model Account
+$ slc loopback:model Account
 ... # follow the prompts
 ```
 
@@ -85,7 +85,7 @@ slc loopback:model Account
 Create a directory for to store scripts.
 
 ```
-mkdir server/bin
+$ mkdir server/bin
 ```
 
 Create [`automigrate.js`](/server/bin/automigrate.js) inside the
@@ -99,7 +99,7 @@ Create [`automigrate.js`](/server/bin/automigrate.js) inside the
 > [`dataSource.automigrate()`](/server/bin/automigrate.js#L18) creates a new table in the database if it doesn't exist. If the table already exists, it is **destroyed** and **all** existing data is dropped. If you want to keep the existing data, use `datasource.autoupdate()` instead.
 
 ```
-node server/bin/automigrate.js
+$ node server/bin/automigrate.js
 ```
 
 This script creates [two models](/server/bin/automigrate.js#L5-L14) in the
@@ -117,7 +117,7 @@ Create [`discover-schema.js`](/server/bin/discover-schema.js) inside the
 ####Test the script
 
 ```
-node server/bin/discover-schema.js
+$ node server/bin/discover-schema.js
 ```
 
 You should see:
@@ -206,7 +206,7 @@ Create [`discover-and-build.js`](/server/bin/discover-and-build.js) in the
 ####Test the script
 
 ```
-node server/bin/discover-and-build.js
+$ node server/bin/discover-and-build.js
 ```
 
 You should see:
