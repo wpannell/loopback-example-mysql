@@ -1,10 +1,12 @@
 {
   "name": "loopback-example-mysql",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "LoopBack with MySQL",
   "main": "server/server.js",
   "scripts": {
-    "test": "mocha -R spec test",
-    "pretest": "jshint ."
+    "pretest": "jshint .",
+    "start": "node .",
+    "test": "mocha -R spec test"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -20,12 +22,12 @@
     "loopback-explorer": "^1.1.0"
   },
   "devDependencies": {
-    "mocha": "^1.20.1",
-    "jshint": "^2.5.6"
+    "jshint": "^2.5.6",
+    "mocha": "^2.3.3"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/strongloop/loopback-example-mysql"
+    "url": "https://github.com/strongloop/loopback-example-mysql"
   },
   "license": "MIT"
 }
